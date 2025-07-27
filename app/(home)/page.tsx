@@ -1,11 +1,9 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import { API_URL } from '../../const';
 
 export const metadata = {
     title: 'Home',
 };
-
-export const API_URL = 'https://nomad-movies.nomadcoders.workers.dev/movies';
 
 async function getMovies() {
     // await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -16,7 +14,7 @@ async function getMovies() {
 
 export default async function Page() {
     const movies = await getMovies();
-    console.log('🚀 ~ Page ~ movies:', movies);
+
     return (
         <div>
             {movies.map((movie) => (
